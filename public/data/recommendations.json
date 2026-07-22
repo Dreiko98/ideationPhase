@@ -1,0 +1,287 @@
+[
+  {
+    "recommendation_id": "R-HH-0001-03",
+    "household_id": "HH-0001",
+    "title": "Investigate repeated morning peaks",
+    "explanation": "Define a target and receive forecast-based alerts.",
+    "trigger": "personal_budget_progress",
+    "estimated_impact_range": "Estimated reduction: 2% - 7%",
+    "confidence": "medium",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.623,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "personal_budget_progress",
+    "status": "open"
+  },
+  {
+    "recommendation_id": "R-HH-0001-02",
+    "household_id": "HH-0001",
+    "title": "Set a personal monthly water budget",
+    "explanation": "Most increase appears between 06:00 and 08:00.",
+    "trigger": "morning_consumption_share",
+    "estimated_impact_range": "Estimated reduction: 3% - 9%",
+    "confidence": "high",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.6031583912300637,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "morning_consumption_share",
+    "status": "resolved"
+  },
+  {
+    "recommendation_id": "R-HH-0001-04",
+    "household_id": "HH-0001",
+    "title": "Enable high-flow notifications",
+    "explanation": "Get faster alerting for unusual spikes.",
+    "trigger": "anomaly_score",
+    "estimated_impact_range": "Estimated reduction: 2% - 7%",
+    "confidence": "medium",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.5902120344956178,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "anomaly_score",
+    "status": "resolved"
+  },
+  {
+    "recommendation_id": "R-HH-0002-03",
+    "household_id": "HH-0002",
+    "title": "Set a personal monthly water budget",
+    "explanation": "Define a target and receive forecast-based alerts.",
+    "trigger": "personal_budget_progress",
+    "estimated_impact_range": "Estimated reduction: 2% - 7%",
+    "confidence": "medium",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.598,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "personal_budget_progress",
+    "status": "open"
+  },
+  {
+    "recommendation_id": "R-HH-0002-02",
+    "household_id": "HH-0002",
+    "title": "Investigate repeated morning peaks",
+    "explanation": "Most increase appears between 06:00 and 08:00.",
+    "trigger": "morning_consumption_share",
+    "estimated_impact_range": "Estimated reduction: 3% - 9%",
+    "confidence": "high",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.5757020025557307,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "morning_consumption_share",
+    "status": "open"
+  },
+  {
+    "recommendation_id": "R-HH-0002-01",
+    "household_id": "HH-0002",
+    "title": "Review possible continuous night-time flow",
+    "explanation": "Check overnight fixtures and toilet cistern behaviour.",
+    "trigger": "possible_leak_probability",
+    "estimated_impact_range": "Estimated reduction: 2% - 7%",
+    "confidence": "medium",
+    "effort": "medium",
+    "cost_level": "low",
+    "relevance_score": 0.5190529647452345,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "possible_leak_probability",
+    "status": "open"
+  },
+  {
+    "recommendation_id": "R-HH-0003-03",
+    "household_id": "HH-0003",
+    "title": "Set a personal monthly water budget",
+    "explanation": "Define a target and receive forecast-based alerts.",
+    "trigger": "personal_budget_progress",
+    "estimated_impact_range": "Estimated reduction: 2% - 7%",
+    "confidence": "medium",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.6122857142857142,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "personal_budget_progress",
+    "status": "open"
+  },
+  {
+    "recommendation_id": "R-HH-0003-02",
+    "household_id": "HH-0003",
+    "title": "Investigate repeated morning peaks",
+    "explanation": "Most increase appears between 06:00 and 08:00.",
+    "trigger": "morning_consumption_share",
+    "estimated_impact_range": "Estimated reduction: 3% - 9%",
+    "confidence": "high",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.5898457663987521,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "morning_consumption_share",
+    "status": "open"
+  },
+  {
+    "recommendation_id": "R-HH-0003-05",
+    "household_id": "HH-0003",
+    "title": "Update household profile after resident change",
+    "explanation": "Profile updates improve comparison fairness.",
+    "trigger": "engagement_score",
+    "estimated_impact_range": "Estimated reduction: 2% - 7%",
+    "confidence": "medium",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.5050090587109686,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "engagement_score",
+    "status": "open"
+  },
+  {
+    "recommendation_id": "R-HH-0004-03",
+    "household_id": "HH-0004",
+    "title": "Set a personal monthly water budget",
+    "explanation": "Define a target and receive forecast-based alerts.",
+    "trigger": "personal_budget_progress",
+    "estimated_impact_range": "Estimated reduction: 2% - 7%",
+    "confidence": "medium",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.6097647058823529,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "personal_budget_progress",
+    "status": "open"
+  },
+  {
+    "recommendation_id": "R-HH-0004-02",
+    "household_id": "HH-0004",
+    "title": "Investigate repeated morning peaks",
+    "explanation": "Most increase appears between 06:00 and 08:00.",
+    "trigger": "morning_consumption_share",
+    "estimated_impact_range": "Estimated reduction: 3% - 9%",
+    "confidence": "high",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.5875853207636708,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "morning_consumption_share",
+    "status": "open"
+  },
+  {
+    "recommendation_id": "R-HH-0004-01",
+    "household_id": "HH-0004",
+    "title": "Review possible continuous night-time flow",
+    "explanation": "Check overnight fixtures and toilet cistern behaviour.",
+    "trigger": "possible_leak_probability",
+    "estimated_impact_range": "Estimated reduction: 2% - 7%",
+    "confidence": "medium",
+    "effort": "medium",
+    "cost_level": "low",
+    "relevance_score": 0.5315092426442163,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "possible_leak_probability",
+    "status": "open"
+  },
+  {
+    "recommendation_id": "R-HH-0005-03",
+    "household_id": "HH-0005",
+    "title": "Set a personal monthly water budget",
+    "explanation": "Define a target and receive forecast-based alerts.",
+    "trigger": "personal_budget_progress",
+    "estimated_impact_range": "Estimated reduction: 2% - 7%",
+    "confidence": "medium",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.5757777777777777,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "personal_budget_progress",
+    "status": "open"
+  },
+  {
+    "recommendation_id": "R-HH-0005-02",
+    "household_id": "HH-0005",
+    "title": "Investigate repeated morning peaks",
+    "explanation": "Most increase appears between 06:00 and 08:00.",
+    "trigger": "morning_consumption_share",
+    "estimated_impact_range": "Estimated reduction: 3% - 9%",
+    "confidence": "high",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.5534511457973271,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "morning_consumption_share",
+    "status": "open"
+  },
+  {
+    "recommendation_id": "R-HH-0005-04",
+    "household_id": "HH-0005",
+    "title": "Enable high-flow notifications",
+    "explanation": "Get faster alerting for unusual spikes.",
+    "trigger": "anomaly_score",
+    "estimated_impact_range": "Estimated reduction: 2% - 7%",
+    "confidence": "medium",
+    "effort": "low",
+    "cost_level": "low",
+    "relevance_score": 0.521925499207473,
+    "action_steps": [
+      "Review recent usage pattern",
+      "Apply recommended adjustment",
+      "Monitor next 7 days"
+    ],
+    "related_metric": "anomaly_score",
+    "status": "open"
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "anomaly_id": "A-HH-0001-001",
+    "household_id": "HH-0001",
+    "start_time": "2026-07-20T11:00:00",
+    "end_time": "2026-07-21T23:00:00",
+    "severity": "medium",
+    "anomaly_score": 0.6030451993780501,
+    "possible_cause": "Consumption anomaly detected. Morning period increase observed.",
+    "confidence": "medium",
+    "estimated_excess_litres": 307.0527473187655,
+    "recommended_check": "Review unusual morning/evening usage pattern.",
+    "resolution_status": "open"
+  },
+  {
+    "anomaly_id": "A-HH-0002-002",
+    "household_id": "HH-0002",
+    "start_time": "2026-07-20T11:00:00",
+    "end_time": "2026-07-21T23:00:00",
+    "severity": "low",
+    "anomaly_score": 0.39522222278141717,
+    "possible_cause": "Consumption anomaly detected",
+    "confidence": "medium",
+    "estimated_excess_litres": 102.27178211761805,
+    "recommended_check": "Review unusual morning/evening usage pattern.",
+    "resolution_status": "open"
+  },
+  {
+    "anomaly_id": "A-HH-0004-003",
+    "household_id": "HH-0004",
+    "start_time": "2026-07-20T11:00:00",
+    "end_time": "2026-07-21T23:00:00",
+    "severity": "low",
+    "anomaly_score": 0.38529578493333155,
+    "possible_cause": "Consumption anomaly detected",
+    "confidence": "medium",
+    "estimated_excess_litres": 0.0,
+    "recommended_check": "Review unusual morning/evening usage pattern.",
+    "resolution_status": "open"
+  },
+  {
+    "anomaly_id": "A-HH-0005-004",
+    "household_id": "HH-0005",
+    "start_time": "2026-07-20T11:00:00",
+    "end_time": "2026-07-21T23:00:00",
+    "severity": "low",
+    "anomaly_score": 0.41745872001798795,
+    "possible_cause": "Consumption anomaly detected",
+    "confidence": "medium",
+    "estimated_excess_litres": 114.05686215630189,
+    "recommended_check": "Review unusual morning/evening usage pattern.",
+    "resolution_status": "open"
+  },
+  {
+    "anomaly_id": "A-HH-0001-HIST-001",
+    "household_id": "HH-0001",
+    "start_time": "2026-06-06 00:00:00",
+    "end_time": "2026-06-11 00:00:00",
+    "severity": "medium",
+    "anomaly_score": 0.58,
+    "possible_cause": "This pattern may be compatible with a toilet or tap leak",
+    "confidence": "medium",
+    "estimated_excess_litres": 620.0,
+    "recommended_check": "Check recommended and monitor night-time flow after repair.",
+    "resolution_status": "resolved"
+  }
+]

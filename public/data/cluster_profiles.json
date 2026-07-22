@@ -1,0 +1,44 @@
+[
+  {
+    "cluster_id": 0,
+    "litres_per_person_day": 68.09463774953093,
+    "coefficient_of_variation": 0.4262400446939107,
+    "night_flow_average": 3.0671284494800743,
+    "weekend_weekday_ratio": 1.1762343488325995,
+    "temperature_sensitivity": 0.043973122654095725,
+    "rainfall_sensitivity": 0.27262584136227686,
+    "seasonal_index": 1.061037238019199,
+    "estimated_outdoor_share": 0.05781250000000001,
+    "anomaly_score": 0.01951995737947386,
+    "trend_slope": 0.03243689349103225,
+    "cluster_label": "Irregular Consumption"
+  },
+  {
+    "cluster_id": 1,
+    "litres_per_person_day": 88.02352746137073,
+    "coefficient_of_variation": 0.13432556115341437,
+    "night_flow_average": 4.019710600455015,
+    "weekend_weekday_ratio": 1.0440465926865465,
+    "temperature_sensitivity": 0.08700413712459434,
+    "rainfall_sensitivity": 0.024063224963418194,
+    "seasonal_index": 1.0376782478094595,
+    "estimated_outdoor_share": 0.05095419847328242,
+    "anomaly_score": 0.08296888666159241,
+    "trend_slope": 0.03016344839112155,
+    "cluster_label": "Efficient & Stable"
+  },
+  {
+    "cluster_id": 2,
+    "litres_per_person_day": 154.08660575212463,
+    "coefficient_of_variation": 0.25062401641015297,
+    "night_flow_average": 6.871306443455288,
+    "weekend_weekday_ratio": 1.1063345484752813,
+    "temperature_sensitivity": 0.11329291504619803,
+    "rainfall_sensitivity": 0.07317234876150988,
+    "seasonal_index": 1.1701222948255918,
+    "estimated_outdoor_share": 0.0721830985915493,
+    "anomaly_score": -0.02255514469188684,
+    "trend_slope": 0.11829930669984076,
+    "cluster_label": "High but Predictable"
+  }
+]
