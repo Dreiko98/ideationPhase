@@ -5,6 +5,7 @@ export type PrototypeState = {
   recommendationStatuses: Record<string, Recommendation["status"]>;
   ticketStatus: string;
   goalM3?: number;
+  billBudgetEur?: number;
   contextNote?: string;
 };
 

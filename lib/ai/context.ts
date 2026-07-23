@@ -18,7 +18,6 @@ export function buildHouseholdAiContext(householdId: string) {
     throw new Error(`Incomplete AI context for ${householdId}`);
   }
 
-  const district = community.districts.find((item) => item.district_id === profile.district_id);
   const openAnomalies = anomalies.filter((item) => item.resolution_status !== "resolved");
   const { household_id: _snapshotHouseholdId, top_recommendation_id: _topRecommendationId, ...metricValues } = snapshot;
   const context = {
@@ -33,8 +32,7 @@ export function buildHouseholdAiContext(householdId: string) {
       garden: profile.garden,
       pool: profile.pool,
       occupancy_pattern: profile.occupancy_pattern,
-      seasonal_home: profile.seasonal_home,
-      district_id: profile.district_id
+      seasonal_home: profile.seasonal_home
     },
     metrics: metricValues,
     forecast: {
@@ -48,7 +46,6 @@ export function buildHouseholdAiContext(householdId: string) {
     anomalies: anomalies.map(({ anomaly_id, household_id: _householdId, ...item }) => item),
     analytical_recommendations: recommendations.map(({ household_id: _householdId, ...item }) => item),
     peer_comparison: matched,
-    district_aggregate: district ?? null,
     bill: {
       period: bill.period,
       fixed_service_charge: bill.fixed_service_charge,
@@ -83,8 +80,6 @@ export function buildHouseholdAiContext(householdId: string) {
     open_anomalies: `Open anomaly signals: ${openAnomalies.length}`,
     bill_total_eur: `Current synthetic bill total: €${bill.total.toFixed(2)}`,
     previous_bill_total_eur: `Previous synthetic bill total: €${bill.previous_total.toFixed(2)}`,
-    district_trend_pct: `District 30-day trend: ${(district?.trend_30d_pct ?? 0).toFixed(1)}%`,
-    district_budget_on_track_pct: `District households on track: ${(district?.budget_on_track_pct ?? 0).toFixed(1)}%`
   };
 
   return { context, facts, profile, snapshot, forecast, recommendations, anomalies, matched, bill };

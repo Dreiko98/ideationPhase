@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import { runCopilot, suggestedQuestions } from "@/lib/copilot";
 import { AiChatResponse } from "@/lib/ai/contracts";
 import { Anomaly, ForecastEntry, Recommendation, HouseholdSnapshot } from "@/lib/types";
@@ -89,7 +89,7 @@ export function CopilotChat({ snapshot, forecast, anomalies, recommendations, ma
         <div className="h-[28rem] space-y-3 overflow-y-auto" aria-live="polite">
           {messages.map((message, index) => (
             <div key={index} className={message.role === "assistant" ? "rounded-xl bg-slate-100 p-3" : "ml-8 rounded-xl bg-water-600 p-3 text-white"}>
-              <p className="whitespace-pre-wrap text-sm leading-6">{message.text}</p>
+              {message.role === "assistant" ? <ProgressiveText text={message.text} animate={index === messages.length - 1} /> : <p className="whitespace-pre-wrap text-sm leading-6">{message.text}</p>}
               {message.facts && message.facts.length > 0 && (
                 <details className="mt-2 text-xs opacity-80">
                   <summary className="cursor-pointer font-medium">Metrics used ({message.facts.length})</summary>
@@ -115,10 +115,10 @@ export function CopilotChat({ snapshot, forecast, anomalies, recommendations, ma
           <ul className="mt-2 space-y-2">{questions.slice(0, 6).map((question) => <li key={question}><button onClick={() => void send(question)} disabled={sending} className="w-full rounded-lg bg-slate-100 px-3 py-2 text-left text-sm hover:bg-slate-200 disabled:opacity-50">{question}</button></li>)}</ul>
         </div>
         <div className="card p-4 text-sm">
-          <h3 className="font-semibold">Prototype actions</h3>
-          <p className="mt-1 text-xs text-slate-500">These are saved locally and shared with Act &amp; Connect.</p>
+          <h3 className="font-semibold">Helpful conversations</h3>
+          <p className="mt-1 text-xs text-slate-500">Use your household data to explore causes, goals and practical routines.</p>
           <div className="mt-3 space-y-2">
-            <button onClick={() => void send("Create a support request using my latest anomaly context")} disabled={sending} className="w-full rounded-lg bg-teal-500 px-3 py-2 text-white disabled:opacity-50">Create support request</button>
+            <button onClick={() => void send("Explain my latest anomaly signal and give me a safe checklist")} disabled={sending} className="w-full rounded-lg bg-teal-500 px-3 py-2 text-white disabled:opacity-50">Review an anomaly</button>
             <button onClick={() => void send("Guests stayed over; explain whether that could fit the recent change and update my context")} disabled={sending} className="w-full rounded-lg bg-slate-800 px-3 py-2 text-white disabled:opacity-50">Update household context</button>
             <button onClick={() => void send("Help me choose a realistic new monthly water goal from my metrics")} disabled={sending} className="w-full rounded-lg bg-water-700 px-3 py-2 text-white disabled:opacity-50">Discuss a personal goal</button>
           </div>
@@ -126,4 +126,19 @@ export function CopilotChat({ snapshot, forecast, anomalies, recommendations, ma
       </aside>
     </div>
   );
+}
+
+function ProgressiveText({ text, animate }: { text: string; animate: boolean }) {
+  const [visible, setVisible] = useState(animate ? "" : text);
+  useEffect(() => {
+    if (!animate) { setVisible(text); return; }
+    let index = 0;
+    window.dispatchEvent(new CustomEvent("waterlens:mascot-speaking", { detail: true }));
+    const timer = window.setInterval(() => {
+      index = Math.min(text.length, index + 3); setVisible(text.slice(0, index));
+      if (index >= text.length) { window.clearInterval(timer); window.dispatchEvent(new CustomEvent("waterlens:mascot-speaking", { detail: false })); }
+    }, 18);
+    return () => { window.clearInterval(timer); window.dispatchEvent(new CustomEvent("waterlens:mascot-speaking", { detail: false })); };
+  }, [text, animate]);
+  return <p className="whitespace-pre-wrap text-sm leading-6">{visible}<span className={visible.length < text.length ? "animate-pulse" : "hidden"}>▍</span></p>;
 }

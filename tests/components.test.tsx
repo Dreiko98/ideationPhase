@@ -1,9 +1,9 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { KpiCard } from "@/components/kpi-card";
-import { ActConnectPanel } from "@/components/act-connect-panel";
 import { ForecastChart } from "@/components/forecast-chart";
-import { CommunityView } from "@/components/community-view";
+import { PeerComparisonView } from "@/components/peer-comparison-view";
+import { WaterMascot } from "@/components/water-mascot";
 
 describe("critical UI components", () => {
   it("reveals a KPI explanation", () => {
@@ -25,28 +25,18 @@ describe("critical UI components", () => {
     expect(screen.getByTestId("forecast-bars-chart").querySelectorAll("rect")).toHaveLength(2);
   });
 
-  it("renders community comparisons without a measured chart container", () => {
-    render(<CommunityView selectedDistrict="D-2" community={{
-      districts: [
-        { district_id: "D-1", avg_litres_per_household_day: 120, anomaly_rate: 0.1, budget_on_track_pct: 70, trend_30d_pct: -2 },
-        { district_id: "D-2", avg_litres_per_household_day: 150, anomaly_rate: 0.2, budget_on_track_pct: 60, trend_30d_pct: 3 }
-      ],
-      matched_comparison: {},
-      equivalent_districts: []
-    }} />);
-    expect(screen.getByText("Average household consumption")).toBeInTheDocument();
-    expect(screen.getAllByText("Your district")).toHaveLength(1);
-    expect(screen.getByText("150.0 L/day")).toBeInTheDocument();
-    expect(screen.getByText("20.0%")).toBeInTheDocument();
+  it("renders a privacy-safe similar-household comparison", () => {
+    render(<PeerComparisonView profile={{ household_id: "HH-TEST", name: "Test", district_id: "D-1", postal_area: "", dwelling_type: "flat", dwelling_size_m2: 80, residents: 2, adults: 2, children: 0, seniors: 0, bathrooms: 1, garden: false, pool: false, occupancy_pattern: "full_time", seasonal_home: false, personal_goal_m3: 8 }} matched={{ cohort_size: 160, median_lppd: 110.3, efficient_range: [59.2, 68.9], percentile: 40, diff_from_median_pct: -5, diff_from_personal_best_pct: 3 }} userLppd={105} />);
+    expect(screen.getByText("Your use compared with similar homes")).toBeInTheDocument();
+    expect(screen.getByText("110.3 L/person/day")).toBeInTheDocument();
+    expect(screen.getByText(/No neighbour, address/)).toBeInTheDocument();
   });
 
-  it("persists anomaly and goal actions locally", async () => {
-    render(<ActConnectPanel householdId="HH-TEST" anomalies={[{ anomaly_id: "A1", household_id: "HH-TEST", start_time: "", end_time: "", severity: "low", anomaly_score: 0.2, possible_cause: "Test anomaly", confidence: "low", estimated_excess_litres: 0, recommended_check: "Check", resolution_status: "open" }]} recommendations={[]} />);
-    fireEvent.click(screen.getByRole("button", { name: "Report repaired" }));
-    fireEvent.change(screen.getByPlaceholderText("Set monthly goal in m3"), { target: { value: "9.5" } });
-    fireEvent.click(screen.getByRole("button", { name: "Save goal" }));
-    await waitFor(() => expect(screen.getByText("Status: resolved")).toBeInTheDocument());
-    expect(screen.getByText("Saved goal: 9.5 m3/month")).toBeInTheDocument();
-    expect(window.localStorage.getItem("waterlens:prototype:HH-TEST")).toContain('"goalM3":9.5');
+  it("lets the user hide and restore the persistent mascot", () => {
+    render(<WaterMascot />);
+    fireEvent.click(screen.getByRole("button", { name: "Hide Aqua" }));
+    expect(screen.getByRole("button", { name: "Show Aqua mascot" })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Show Aqua mascot" }));
+    expect(screen.getByLabelText("Aqua, your water guide")).toBeInTheDocument();
   });
 });

@@ -18,9 +18,7 @@ export const FACT_KEYS = [
   "cohort_median_lppd",
   "open_anomalies",
   "bill_total_eur",
-  "previous_bill_total_eur",
-  "district_trend_pct",
-  "district_budget_on_track_pct"
+  "previous_bill_total_eur"
 ] as const;
 
 export type FactKey = (typeof FACT_KEYS)[number];

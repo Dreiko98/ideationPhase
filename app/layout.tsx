@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Navigation } from "@/components/navigation";
+import { WaterMascot } from "@/components/water-mascot";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navigation />
         </Suspense>
         <main className="mx-auto max-w-7xl px-4 py-6">{children}</main>
+        <WaterMascot />
       </body>
     </html>
   );

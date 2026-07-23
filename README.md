@@ -45,12 +45,11 @@ The fixed seed is `20260721` and the fixed data cut-off is `2026-07-21`. This ma
 
 ## Product modules
 
-- **My Water:** five KPIs, 14-day forecast bands, AI weekly summary, anomalies, and AI-personalised recommendations.
-- **Water Copilot:** OpenAI conversation grounded in the selected profile and metrics, with traceable facts and deterministic fallback.
-- **My Community:** working district charts, matched cohorts, aggregates and an AI interpretation without coordinates or household readings.
-- **Act & Connect:** anomaly, recommendation, ticket, and goal workflows persisted in browser storage.
-- **Bill Explainer:** synthetic tiered tariff breakdown plus an AI explanation linked to household metrics and forecast.
-- **Onboarding:** editable home, household, budget, and consent fields persisted locally.
+- **My Water:** five KPIs, 14-day forecast bands, AI weekly summary, personalised recommendations and a voluntary campaign challenge.
+- **Water Copilot:** OpenAI conversation grounded in the selected profile and metrics, with progressive responses and an animated Aqua mascot.
+- **My Community:** privacy-safe comparisons with similar households, AI interpretation, awareness content and campaigns; district ranking is deliberately not shown.
+- **Bill Explainer:** PDF/image upload, side-by-side source and AI breakdown, historical totals, persistent spending budget and a visual explanation of where charges go.
+- **Aqua:** optional persistent water-drop mascot with contextual tips across every screen.
 
 Browser-persisted actions are explicitly prototype-only; they are not sent to a utility backend.
 
@@ -110,12 +109,12 @@ Select **Valencia Family Focus (`HH-0001`)**:
 2. Month-end projection is 12.2 m³ versus an 11.0 m³ budget.
 3. Night flow remains low, so the explanation does not claim a strong continuous leak.
 4. Community shows the same 64th percentile used by the dashboard and Copilot.
-5. Act & Connect contains an open morning-pattern anomaly and a resolved historical possible leak.
-6. Accept/dismiss an action, report an anomaly repaired, draft support, or save a goal; refresh to verify browser persistence.
+5. Bill Explainer shows the source bill beside its explanation and lets you save a spending target.
+6. Join the campaign or hide Aqua; refresh to verify browser persistence.
 
 ## Contracts and privacy
 
-`public/data` contains household profiles, snapshots, forecasts, anomalies, recommendations, bills, community aggregates, and cluster profiles. Python tests validate ID coverage and cross-page values. Community district rows contain no household ID, postal area, coordinates, or raw readings. Matched comparison returns only cohort size and summary statistics for the selected demo household. All source data is synthetic.
+`public/data` contains household profiles, snapshots, forecasts, anomalies, recommendations, bills, community aggregates, and cluster profiles. Python tests validate ID coverage and cross-page values. The product UI exposes only cohort size and summary statistics for the selected demo household; it does not show another household’s identity, location or readings. All source data is synthetic.
 
 ## Limitations
 

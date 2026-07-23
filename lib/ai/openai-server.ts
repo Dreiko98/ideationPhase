@@ -83,7 +83,7 @@ function localInsights(householdId: string, reason: string): AiInsights {
       headline: `You are at the ${matched.percentile}th percentile in your matched cohort.`,
       interpretation: `The comparison includes ${matched.cohort_size} households with a median of ${matched.median_lppd.toFixed(1)} L/person/day.`,
       comparison: `Your recent use is ${matched.diff_from_median_pct.toFixed(1)}% from the matched median.`,
-      privacyNote: "Only anonymous cohort and district aggregates are used; no other household reading is shown."
+      privacyNote: "Only anonymous matched-cohort aggregates are shown; no other household reading is exposed."
     },
     billSummary: {
       headline: `Your synthetic bill is €${bill.total.toFixed(2)}.`,
@@ -107,7 +107,7 @@ async function requestInsights(householdId: string): Promise<AiInsights> {
         "You may introduce reasonable durations, step counts, suggested targets or indicative savings as part of advice, but label them clearly as recommendations or estimates rather than household facts.",
         "Do not diagnose a leak; describe signals and practical checks.",
         "Turn analytical recommendation candidates into personalised, low-risk actions. Keep each sourceRecommendationId unchanged and use exactly the three supplied candidates.",
-        "Distinguish measured use, model forecasts, uncertainty, cohort aggregates, and synthetic bill data.",
+        "Distinguish measured use, model forecasts, uncertainty, matched-cohort aggregates, and synthetic bill data.",
         "Use plain English for a general household. State uncertainty and avoid guilt, alarm, guarantees, or claims of causation.",
         "For factKeys, list every metric used in the prose. Never expose household IDs or postal information."
       ].join(" "),

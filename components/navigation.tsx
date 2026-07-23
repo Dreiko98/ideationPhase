@@ -7,9 +7,7 @@ const links = [
   { href: "/my-water", label: "My Water" },
   { href: "/copilot", label: "Water Copilot" },
   { href: "/community", label: "My Community" },
-  { href: "/act-connect", label: "Act & Connect" },
-  { href: "/bill-explainer", label: "Bill Explainer" },
-  { href: "/onboarding", label: "Onboarding" }
+  { href: "/bill-explainer", label: "Bill Explainer" }
 ];
 
 export function Navigation() {

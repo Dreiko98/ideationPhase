@@ -9,3 +9,26 @@ body {
 .card {
   @apply rounded-2xl bg-white shadow-card border border-slate-100;
 }
+
+.water-mascot {
+  position: relative;
+  width: 72px;
+  height: 86px;
+  flex: none;
+  border-radius: 52% 48% 55% 45% / 65% 65% 35% 35%;
+  background: linear-gradient(145deg, #56ccf2, #0f6fb6 72%);
+  box-shadow: 0 12px 28px rgba(15, 111, 182, 0.3);
+  transform: rotate(45deg);
+  animation: mascot-float 3s ease-in-out infinite;
+}
+.mascot-shine { position: absolute; left: 15px; top: 12px; width: 16px; height: 25px; border-radius: 50%; background: rgba(255,255,255,.55); }
+.mascot-eye { position: absolute; top: 31px; width: 7px; height: 10px; border-radius: 50%; background: #082f49; transform: rotate(-45deg); }
+.mascot-eye-left { left: 26px; }
+.mascot-eye-right { left: 45px; }
+.mascot-mouth { position: absolute; left: 35px; top: 49px; width: 13px; height: 7px; border-bottom: 3px solid #082f49; border-radius: 50%; transform: rotate(-45deg); }
+.water-mascot.is-speaking .mascot-mouth { width: 11px; height: 12px; border: 3px solid #082f49; background: #e0f2fe; animation: mascot-talk .25s ease-in-out infinite alternate; }
+.mascot-bubble { position: relative; border: 1px solid #d3f0ff; }
+.mascot-bubble::after { content: ""; position: absolute; right: -8px; bottom: 18px; width: 16px; height: 16px; background: white; border-right: 1px solid #d3f0ff; border-top: 1px solid #d3f0ff; transform: rotate(45deg); }
+@keyframes mascot-float { 0%,100% { transform: rotate(45deg) translateY(0); } 50% { transform: rotate(45deg) translateY(-5px); } }
+@keyframes mascot-talk { from { transform: rotate(-45deg) scaleY(.65); } to { transform: rotate(-45deg) scaleY(1.15); } }
+@media (prefers-reduced-motion: reduce) { .water-mascot, .water-mascot.is-speaking .mascot-mouth { animation: none; } }

@@ -6,6 +6,7 @@ import { useAiInsights } from "@/lib/ai/use-ai-insights";
 import { AiStatus } from "./ai-status";
 import { ForecastChart } from "./forecast-chart";
 import { KpiCard } from "./kpi-card";
+import { CampaignBanner } from "./campaign-banner";
 
 type Props = {
   profile: HouseholdProfile;
@@ -104,6 +105,8 @@ export function MyWaterView({ profile, snapshot, forecast, recommendations, anom
           <Insight title="Best next step">{topAction}.</Insight>
         </div>
       </section>
+
+      <CampaignBanner weeklyChange={snapshot.week_change_pct} />
 
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-5" aria-label="Key water metrics">
         {kpis.map((kpi) => <KpiCard key={kpi.label} {...kpi} />)}
