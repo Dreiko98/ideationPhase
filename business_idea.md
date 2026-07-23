@@ -1,5 +1,3 @@
-echale un ojo al repositorio y proyecto entero, hay varios .md explicando cosas del funcionamiento, y ahora ayudame a rellenar de este documento la parte de solution y solution tagline
-
 **GOTA
 
 Description of the digital business idea (500 Palabras)
@@ -34,14 +32,10 @@ Water utility apps have digitized billing, but not water itself — customers st
 
 <<Solution>> (950-1100 char)
 
-- GOTA plugs into smart-meter data utilities already collect, adding an AI engagement layer without new household hardware.
-- It turns raw readings into a personalized water-health view: clear KPIs, 14-day forecasts, budget tracking, and early anomaly signals that help households investigate possible leaks before the next bill.
-- A behaviorally grounded engine ranks the most relevant actions for each home, adapting guidance to occupancy, usage patterns, goals, and past responses instead of repeating generic tips.
-- Water Copilot explains changes, forecasts, comparisons, and bills in plain language, reveals the metrics behind each answer, and guides users from insight to action through goals, alerts, support, and payment-plan journeys.
-- Privacy-safe comparisons match similar households and connect personal progress with district goals, scarcity, and utility campaigns. Utilities gain a configurable B2B2C platform that improves engagement, reduces service demand and water loss, and produces anonymized planning insights.
+Bullet points describing your solution
 
 <<Solution Tagline>> (One impactful sentence-120-145 char)
-GOTA turns existing smart-meter data into personalized forecasts, trusted guidance and timely actions that help every household save water.
+An impacting sentence summarizing your solution
 
 <<Market>> (950-1100 char)
 
