@@ -32,10 +32,14 @@ Water utility apps have digitized billing, but not water itself — customers st
 
 <<Solution>> (950-1100 char)
 
-Bullet points describing your solution
+- GOTA adds an AI layer to smart-meter data utilities already collect, giving households personalized intelligence without new hardware.
+- My Water turns readings into clear KPIs, 14-day forecasts, budget tracking, early anomaly signals, and ranked actions tailored to each home's patterns.
+- Water Copilot explains changes, forecasts, possible leaks, and next steps conversationally while revealing the metrics behind each answer; Aqua, an optional mascot, keeps guidance approachable.
+- My Community replaces district rankings with privacy-safe comparisons among similar homes, combining fair benchmarks with educational content and voluntary campaigns that link personal progress to shared water goals.
+- Bill Explainer analyzes uploaded PDF or image bills beside the original, clarifies each charge, tracks historical totals, and supports a spending target. For utilities, this configurable B2B2C layer improves engagement, reduces avoidable support demand and water loss, and provides aggregated planning insight.
 
 <<Solution Tagline>> (One impactful sentence-120-145 char)
-An impacting sentence summarizing your solution
+GOTA turns existing meter and billing data into trusted forecasts, clear explanations and personalized actions that make saving water easier.
 
 <<Market>> (950-1100 char)
 

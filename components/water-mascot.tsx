@@ -42,9 +42,7 @@ export function WaterMascot() {
         {!speaking && <button onClick={() => setTipIndex((value) => value + 1)} className="mt-2 font-semibold text-water-600">Another tip →</button>}
       </div>
       <div className={`water-mascot ${speaking ? "is-speaking" : ""}`} aria-hidden="true">
-        <div className="mascot-shine" />
-        <div className="mascot-eye mascot-eye-left" /><div className="mascot-eye mascot-eye-right" />
-        <div className="mascot-mouth" />
+        <img className="water-mascot-svg" src="/brand/aqua-mascot.svg" alt="" />
       </div>
     </aside>
   );

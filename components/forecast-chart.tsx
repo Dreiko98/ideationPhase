@@ -47,10 +47,10 @@ export function ForecastChart({ data, variant }: { data: Point[]; variant: "band
 
         {variant === "band" ? (
           <>
-            <path d={area} fill="#dbeeff" stroke="#93c5fd" strokeWidth="1" />
-            <path d={line} fill="none" stroke="#0f6fb6" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" />
+            <path d={area} fill="#e7effd" stroke="#a9c6f7" strokeWidth="1" />
+            <path d={line} fill="none" stroke="#345cae" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" />
             {data.map((point, index) => (
-              <circle key={point.date} cx={x(index)} cy={y(point.litres)} r="4" fill="#0f6fb6" stroke="white" strokeWidth="2">
+              <circle key={point.date} cx={x(index)} cy={y(point.litres)} r="4" fill="#345cae" stroke="white" strokeWidth="2">
                 <title>{`${shortDate(point.date)}: ${Math.round(point.litres)} L (likely range ${Math.round(point.lower)}–${Math.round(point.upper)} L)`}</title>
               </circle>
             ))}
@@ -60,7 +60,7 @@ export function ForecastChart({ data, variant }: { data: Point[]; variant: "band
             const date = new Date(`${point.date}T12:00:00`);
             const weekend = date.getDay() === 0 || date.getDay() === 6;
             return (
-              <rect key={point.date} x={x(index) - barWidth / 2} y={y(point.litres)} width={barWidth} height={MARGIN.top + innerHeight - y(point.litres)} rx="4" fill={weekend ? "#18b5b3" : "#1e88d8"}>
+              <rect key={point.date} x={x(index) - barWidth / 2} y={y(point.litres)} width={barWidth} height={MARGIN.top + innerHeight - y(point.litres)} rx="5" fill={weekend ? "#a9c6f7" : "#345cae"}>
                 <title>{`${shortDate(point.date)}: ${Math.round(point.litres)} litres${weekend ? " (weekend)" : ""}`}</title>
               </rect>
             );

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 116" role="img" aria-labelledby="title description">
+  <title id="title">Aqua</title>
+  <desc id="description">A simple water-drop mascot with two round eyes and a subtle smile.</desc>
+  <defs>
+    <linearGradient id="body" x1="22" y1="18" x2="78" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A9C6F7"/>
+      <stop offset="1" stop-color="#345CAE"/>
+    </linearGradient>
+  </defs>
+  <path d="M50 4C45 18 18 42 14 65C9 91 26 108 50 108S91 91 86 65C82 42 55 18 50 4Z" fill="url(#body)"/>
+  <path d="M50 7C45 21 20 43 16 66C12 89 27 105 50 105S88 89 84 66C80 43 55 21 50 7Z" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.5"/>
+  <circle cx="38" cy="67" r="4" fill="#233F75"/>
+  <circle cx="62" cy="67" r="4" fill="#233F75"/>
+  <path d="M40 82C45 88 55 88 60 82" fill="none" stroke="#233F75" stroke-width="3" stroke-linecap="round"/>
+  <path d="M31 42C27 48 25 54 24 60" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>
+</svg>

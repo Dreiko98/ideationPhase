@@ -4,6 +4,7 @@ import { KpiCard } from "@/components/kpi-card";
 import { ForecastChart } from "@/components/forecast-chart";
 import { PeerComparisonView } from "@/components/peer-comparison-view";
 import { WaterMascot } from "@/components/water-mascot";
+import { dashboardPresets } from "@/components/my-water-view";
 
 describe("critical UI components", () => {
   it("reveals a KPI explanation", () => {
@@ -38,5 +39,13 @@ describe("critical UI components", () => {
     expect(screen.getByRole("button", { name: "Show Aqua mascot" })).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Show Aqua mascot" }));
     expect(screen.getByLabelText("Aqua, your water guide")).toBeInTheDocument();
+  });
+
+  it("gives every demo household a distinct saved My Water dashboard", () => {
+    const presets = Object.values(dashboardPresets);
+    expect(presets).toHaveLength(5);
+    expect(new Set(presets.map((preset) => preset.widgets.join("|"))).size).toBe(5);
+    expect(new Set(presets.map((preset) => preset.kpis.join("|"))).size).toBe(5);
+    expect(presets.every((preset) => preset.widgets[0] === "hero")).toBe(true);
   });
 });

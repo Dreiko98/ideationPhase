@@ -45,7 +45,7 @@ The fixed seed is `20260721` and the fixed data cut-off is `2026-07-21`. This ma
 
 ## Product modules
 
-- **My Water:** five KPIs, 14-day forecast bands, AI weekly summary, personalised recommendations and a voluntary campaign challenge.
+- **My Water:** five simulated saved-dashboard presets. Each demo household exposes a different selection and order of KPIs, forecasts, alerts, AI guidance, recommendations and campaigns, representing user-controlled widget customisation in the production vision.
 - **Water Copilot:** OpenAI conversation grounded in the selected profile and metrics, with progressive responses and an animated Aqua mascot.
 - **My Community:** privacy-safe comparisons with similar households, AI interpretation, awareness content and campaigns; district ranking is deliberately not shown.
 - **Bill Explainer:** PDF/image upload, side-by-side source and AI breakdown, historical totals, persistent spending budget and a visual explanation of where charges go.

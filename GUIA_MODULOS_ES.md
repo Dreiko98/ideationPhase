@@ -24,6 +24,18 @@ El indicador de cada módulo muestra si el contenido procede de OpenAI o de una 
 
 Es el panel principal del hogar.
 
+### Personalización simulada en el MVP
+
+En el producto final, cada usuario podrá elegir qué widgets y métricas quiere ver y ordenarlos. Para evitar construir un editor completo dentro del MVP, los cinco hogares de demostración representan cinco configuraciones ya guardadas:
+
+- **Valencia Family Focus:** prioriza presupuesto, previsión, consumo y rutinas familiares.
+- **Garden Weekend Home:** abre primero la distribución por días y se centra en previsión y cambios de rutina.
+- **Efficient Senior Couple:** prioriza seguridad, señales, estado del agua y una interfaz más reducida.
+- **Dynamic Shared Flat:** destaca consumo por persona, ritmos diarios y señales relevantes para una vivienda compartida.
+- **Tourist Apartment:** prioriza monitorización remota, anomalías y previsión; oculta campañas y explicaciones semanales.
+
+Al cambiar de hogar, no solo cambian los datos: también cambian la selección de KPIs, los widgets visibles y su orden. Durante la presentación debe explicarse como el resultado de las preferencias guardadas por cada usuario, no como una personalización automática decidida por la IA.
+
 - Resume el cambio semanal y la franja horaria donde aparece la variación más clara.
 - Presenta consumo del mes, litros por persona y día, progreso frente al presupuesto, previsión de cierre y estado de posibles anomalías.
 - Incluye dos gráficos de previsión: banda de incertidumbre diaria y barras para detectar los días de mayor consumo.

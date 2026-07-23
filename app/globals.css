@@ -3,32 +3,59 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-50 text-slate-900 antialiased;
+  @apply bg-brand-50 text-slate-900 antialiased;
+  background-image: linear-gradient(180deg, #fbfdff 0%, #f4f7fd 52%, #f8faff 100%);
+  font-feature-settings: "ss01" 1, "cv02" 1;
 }
 
 .card {
-  @apply rounded-2xl bg-white shadow-card border border-slate-100;
+  @apply rounded-[1.65rem] bg-white/95 shadow-card border border-brand-100;
 }
+
+::selection { background: #a9c6f7; color: #233f75; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, summary:focus-visible {
+  outline: 3px solid rgba(52, 92, 174, .28);
+  outline-offset: 3px;
+}
+.brand-word, .brand-g {
+  font-family: ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;
+  font-weight: 900;
+  line-height: .8;
+  letter-spacing: -.09em;
+}
+.brand-g { font-size: 1em; }
+.brand-orb {
+  position: fixed;
+  z-index: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  filter: blur(2px);
+}
+.brand-orb-one {
+  width: 30rem; height: 30rem; right: -16rem; top: 8rem;
+  background: radial-gradient(circle, rgba(169,198,247,.22), rgba(169,198,247,0) 68%);
+}
+.brand-orb-two {
+  width: 24rem; height: 24rem; left: -15rem; bottom: 3rem;
+  background: radial-gradient(circle, rgba(52,92,174,.08), rgba(52,92,174,0) 70%);
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
 
 .water-mascot {
   position: relative;
-  width: 72px;
-  height: 86px;
+  width: 104px;
+  height: 122px;
   flex: none;
-  border-radius: 52% 48% 55% 45% / 65% 65% 35% 35%;
-  background: linear-gradient(145deg, #56ccf2, #0f6fb6 72%);
-  box-shadow: 0 12px 28px rgba(15, 111, 182, 0.3);
-  transform: rotate(45deg);
-  animation: mascot-float 3s ease-in-out infinite;
+  filter: drop-shadow(0 12px 13px rgba(52, 92, 174, 0.22));
+  transform-origin: 50% 100%;
+  animation: mascot-float 3.2s ease-in-out infinite;
 }
-.mascot-shine { position: absolute; left: 15px; top: 12px; width: 16px; height: 25px; border-radius: 50%; background: rgba(255,255,255,.55); }
-.mascot-eye { position: absolute; top: 31px; width: 7px; height: 10px; border-radius: 50%; background: #082f49; transform: rotate(-45deg); }
-.mascot-eye-left { left: 26px; }
-.mascot-eye-right { left: 45px; }
-.mascot-mouth { position: absolute; left: 35px; top: 49px; width: 13px; height: 7px; border-bottom: 3px solid #082f49; border-radius: 50%; transform: rotate(-45deg); }
-.water-mascot.is-speaking .mascot-mouth { width: 11px; height: 12px; border: 3px solid #082f49; background: #e0f2fe; animation: mascot-talk .25s ease-in-out infinite alternate; }
-.mascot-bubble { position: relative; border: 1px solid #d3f0ff; }
-.mascot-bubble::after { content: ""; position: absolute; right: -8px; bottom: 18px; width: 16px; height: 16px; background: white; border-right: 1px solid #d3f0ff; border-top: 1px solid #d3f0ff; transform: rotate(45deg); }
-@keyframes mascot-float { 0%,100% { transform: rotate(45deg) translateY(0); } 50% { transform: rotate(45deg) translateY(-5px); } }
-@keyframes mascot-talk { from { transform: rotate(-45deg) scaleY(.65); } to { transform: rotate(-45deg) scaleY(1.15); } }
-@media (prefers-reduced-motion: reduce) { .water-mascot, .water-mascot.is-speaking .mascot-mouth { animation: none; } }
+.water-mascot-svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.water-mascot.is-speaking .water-mascot-svg { animation: mascot-listen .8s ease-in-out infinite alternate; }
+.mascot-bubble { position: relative; border: 1px solid #d8e5fb; }
+.mascot-bubble::after { content: ""; position: absolute; right: -8px; bottom: 18px; width: 16px; height: 16px; background: white; border-right: 1px solid #d8e5fb; border-top: 1px solid #d8e5fb; transform: rotate(45deg); }
+@keyframes mascot-float { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-7px) rotate(1.5deg); } }
+@keyframes mascot-listen { from { transform: scale(1); opacity: .9; } to { transform: scale(1.035); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .water-mascot, .water-mascot.is-speaking .water-mascot-svg { animation: none; } }
